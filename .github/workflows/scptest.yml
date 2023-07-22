@@ -19,7 +19,7 @@ jobs:
       # ファイルを指定したディレクトリに移動
       - name: Copy files to target directory
         run: |
-          mkdir target_dir
+          mkdir html
           cp -R test-vue-app/dist/* html
       #チェックアウトしたリポジトリ内のtest-vue-app/index.htmlをEC2の/tmpにアップロードします
       - name: Upload files by SCP
