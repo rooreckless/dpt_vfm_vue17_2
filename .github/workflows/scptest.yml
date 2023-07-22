@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      #このymlが使われるリポジトリをチェックアウトします
       - name: Checkout repository
         uses: actions/checkout@v3
+      #チェックアウトしたリポジトリ内のtest-vue-app/index.htmlをEC2の/tmpにアップロードします
       - name: Upload files by SCP
         uses: appleboy/scp-action@master
         with:
