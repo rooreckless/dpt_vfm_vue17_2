@@ -11,6 +11,9 @@ jobs:
       #このymlが使われるリポジトリをチェックアウトします
       - name: Checkout repository
         uses: actions/checkout@v3
+      # ファイルを指定したディレクトリに移動
+      - name: Move files to target directory
+        run: mv test-vue-app/public/* target_directory/
       #チェックアウトしたリポジトリ内のtest-vue-app/index.htmlをEC2の/tmpにアップロードします
       - name: Upload files by SCP
         uses: appleboy/scp-action@master
@@ -20,5 +23,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
-          source: "test-vue-app/public/*"
+          source: "target_directory/*"
           target: "/tmp"
