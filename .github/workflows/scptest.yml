@@ -12,7 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: build vue
-        run: npm run build
+        run: |
+          npm install
+          npm run build
       # ファイルを指定したディレクトリに移動
       - name: Copy files to target directory
         run: |
