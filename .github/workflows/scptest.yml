@@ -45,4 +45,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
           source: "html"
-          target: "/usr/share/nginx"
+          target: "/tmp"
+          # target: "/usr/share/nginx"
