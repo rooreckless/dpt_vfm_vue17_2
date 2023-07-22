@@ -18,5 +18,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
-          source: "*"
+          source: "test-vue-app/index.html"
           target: "/tmp"
