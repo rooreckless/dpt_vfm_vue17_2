@@ -23,7 +23,7 @@ jobs:
           cp -R test-vue-app/dist/* html
 
       # EC2インスタンス上のターゲットディレクトリを事前に削除
-      - name: Remove target directory on EC2
+      - name: Remove target directory on EC2 & Set permissions
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -33,6 +33,7 @@ jobs:
           passphrase: ${{ secrets.SSH_PASS }}
           script: |
             sudo rm -rf /usr/share/nginx/html/*
+            sudo chmod -R 755 /usr/share/nginx
 
       #チェックアウトしたリポジトリ内のtest-vue-app/index.htmlをEC2の/tmpにアップロードします
       - name: Upload files by SCP
