@@ -4,7 +4,7 @@ import { ref } from 'vue'
 defineProps({
   msg: String,
 })
-let msg_ref = ref("Vue+Vite")
+let msg_ref = ref("Vue+Vite+flask")
 
 const count = ref(0)
 
