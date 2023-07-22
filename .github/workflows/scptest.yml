@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  deploy:
+  scpupload:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,5 +20,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
-          source: "test-vue-app/index.html"
+          source: "test-vue-app/README.md"
           target: "/tmp"
