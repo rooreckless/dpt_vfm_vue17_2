@@ -32,7 +32,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
           script: |
-            sudo rm -rf /usr/share/nginx/html/*
+            sudo rm -rf /usr/share/nginx/html
             sudo chmod -R 755 /usr/share/nginx
 
       #チェックアウトしたリポジトリ内のtest-vue-app/index.htmlをEC2の/tmpにアップロードします
