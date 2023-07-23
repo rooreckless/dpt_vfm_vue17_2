@@ -48,3 +48,13 @@ jobs:
           target: "/usr/share/nginx"
           # target: "/tmp"
           
+      - name: Reset permissions on EC2 & 
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            port: ${{ secrets.SSH_PORT }}
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            passphrase: ${{ secrets.SSH_PASS }}
+            script: |
+              sudo chmod -R 640 /usr/share/nginx
