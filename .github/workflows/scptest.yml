@@ -46,8 +46,6 @@ jobs:
           passphrase: ${{ secrets.SSH_PASS }}
           source: "html"
           target: "/usr/share/nginx"
-          # target: "/tmp"
-          
       - name: Reset permissions on EC2 & 
           uses: appleboy/ssh-action@master
           with:
